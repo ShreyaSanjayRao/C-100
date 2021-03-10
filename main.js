@@ -5,7 +5,7 @@ function start ()
     document.getElementById("textbox").innerHTML="";
     recognition.start();
     }
-    recognition.onresult =function run (event) {
+   recognition.onresult =function(event) {
         console.log(event);
         var Content = event.results[0][0].transcript;
         console.log(Content);
@@ -17,7 +17,7 @@ function start ()
         }
     }
     function speak(){
-        var synth = window.speechsynthesis;
+        var synth = window.speechSynthesis;
         speak_data = "Taking your Selfie in 5 seconds";
         var utterThis = new SpeechSynthesisUtterance(speak_data);
         synth.speak(utterThis);
